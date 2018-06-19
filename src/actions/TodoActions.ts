@@ -1,8 +1,8 @@
 import AppDispatcher from '../AppDispatcher';
 
-export const addTodo = () => {
+export const addTodo = (todoItem: string) => {
     AppDispatcher.dispatch({
-        payload: 'Item for adding',
+        payload: todoItem,
         type: 'ADD_TODO'        
     });
 };

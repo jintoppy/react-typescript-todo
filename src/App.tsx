@@ -1,6 +1,8 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link, Route } from 'react-router-dom';
+import AddTodoContainer from './containers/AddTodoContainer';
 import HomeContainer from './containers/HomeContainer';
+import TodoCountContainer from './containers/TodoCountContainer';
 import * as React from 'react';
 import './App.css';
 
@@ -18,15 +20,19 @@ class App extends React.Component {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item active">
               <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item active">
+              <Link className="nav-link" to="/add-todo">Add</Link>
             </li>            
           </ul>
-        
+          <TodoCountContainer />
         </div>
       </nav>
 
       <main role="main" className="container">
         <h1>Todo List</h1>
         <Route exact={true} path="/" component={HomeContainer} />
+        <Route path="/add-todo" component={AddTodoContainer} />
       </main>
     </React.Fragment>
     );
